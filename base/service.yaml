@@ -8,6 +8,6 @@ spec:
     edition: bedrock
   type: NodePort
   ports:
-    - protocol: TCP
+    - protocol: UDP
       port: 19132
       targetPort: 19132
