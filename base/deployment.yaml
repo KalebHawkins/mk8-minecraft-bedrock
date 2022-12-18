@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-bedrock
+  labels:
+    app: minecraft
+    edition: bedrock
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft
+      edition: bedrock
+  template:
+    metadata:
+      labels:
+        app: minecraft
+        edition: bedrock
+    spec:
+      volumes:
+        - name: mc-data
+          persistentVolumeClaim:
+            claimName: minecraft-bedrock
+      containers:
+      - name: minecraft-bedrock
+        image: docker.io/itzg/minecraft-bedrock-server
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1500m"
+          limits:
+            memory: "4Gi"
+            cpu: 3000m
+        ports:
+        - containerPort: 19132
+          protocol: UDP
+        env:
+        - name: EULA
+          value: "TRUE"
+        volumeMounts:
+          - name: mc-data
+            mountPath: /data
