@@ -26,10 +26,10 @@ spec:
         image: docker.io/itzg/minecraft-bedrock-server
         resources:
           requests:
-            memory: "2Gi"
+            memory: "4Gi"
             cpu: "1500m"
           limits:
-            memory: "4Gi"
+            memory: "8Gi"
             cpu: 3000m
         ports:
         - containerPort: 19132
