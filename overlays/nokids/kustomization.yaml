@@ -9,3 +9,5 @@ commonLabels:
   edition: bedrock
   env: nokids
 
+patches:
+  - path: deployment-patch.yaml
