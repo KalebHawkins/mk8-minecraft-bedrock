@@ -17,6 +17,6 @@ spec:
         - name: SERVER_NAME
           value: KryoMine
         - name: ALLOW_CHEATS
-          value: true
+          value: "true"
         - name: LEVEL_NAME
           value: kryotek
