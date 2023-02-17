@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-bedrock
+spec:
+  template:
+    metadata:
+      labels:
+        app: minecraft
+        edition: bedrock
+    spec:
+      containers:
+      - name: minecraft-bedrock
+        env:
+        - name: EULA
+          value: "TRUE"
+        - name: SERVER_NAME
+          value: KryoMine
+        - name: ALLOW_CHEATS
+          value: "true"
+        - name: LEVEL_NAME
+          value: kryotek
