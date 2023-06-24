@@ -2,12 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
   - ../../base
-nameSuffix: -nokids
-namespace: minecraft-bedrock-nokids
+nameSuffix: -prod
+namespace: minecraft-bedrock-prod
 commonLabels: 
   app: minecraft
   edition: bedrock
-  env: nokids
+  env: prod
 
 patches:
   - path: deployment-patch.yaml
